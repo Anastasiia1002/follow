@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import { getUsers, getStatusFilter } from "../../redux/users/selectors";
 import Card from '../Card/card';
 import { statusFilters } from '../../redux/users/constants';
 import { fetchUsers } from '../../redux/users/operations';
 
-import {Box} from './CardList.styled'
+import {Box, Button, Line, BackHome} from './CardList.styled'
 
 
 const getVisibleUsers = (users, statusFilter) => {
@@ -28,17 +30,23 @@ const CardList = () => {
     const statusFilter = useSelector(getStatusFilter);
     const visibleUsers = getVisibleUsers(users, statusFilter);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [limit, setLimit]= useState(9)
+
     useEffect(() => {
-      dispatch(fetchUsers());
-    }, [dispatch]);
+      dispatch(fetchUsers(limit));
+    }, [dispatch,limit]);
 
   
   return (
     <Box>
+        <Line>
+            <BackHome onClick={()=>navigate("/")}>Back Home</BackHome>
+        </Line>
         {visibleUsers.map(user =>(
             <Card user={user} key={user.id}/>
         ))}
-           
+        <Button onClick={()=>setLimit(limit+9)} > Load More</Button>   
         
        
     </Box>

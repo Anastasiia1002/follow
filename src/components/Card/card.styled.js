@@ -77,4 +77,18 @@ font-size: 18px;
 line-height: 22px;
 font-weight: 600;
 color:#373737;
+cursor: pointer;
+`
+export const ButtonFol= styled.button`
+width: 196px;
+height: 50px;
+border-radius: 10px;
+box-shadow: 0px 3.44px rgba(0, 0, 0, 0.25);
+background-color: #5CD3A8;
+margin-top: 26px;
+font-size: 18px;
+line-height: 22px;
+font-weight: 600;
+color:#373737;
+cursor: pointer;
 `
