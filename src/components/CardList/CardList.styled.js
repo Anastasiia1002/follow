@@ -11,24 +11,38 @@ export const Box = styled.div`
   margin-right: auto;
 `;
 export const Line = styled.div`
-display: flex;
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  height: 30px;
+`;
+export const BackHome = styled.p`
+  color: #4b2a99;
+  cursor: pointer;
+`;
 
-width: 1200px;
-height: 30px;
-`
-export const BackHome= styled.p`
-color: #4B2A99;
-cursor: pointer;
+export const Button = styled.button`
+  width: 1200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #4b2a99;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 600;
+  cursor: pointer;
+`;
+export const Filters= styled.div`
 `
 
-export const Button =styled.button`  
-width: 1200px;
-height: 50px;
-border-radius:10px;
-background-color: #4B2A99;
-color: #FFFFFF;
-font-size: 18px;
-line-height: 22px;
-font-weight: 600;
-cursor: pointer;
- `
+export const Btn = styled.button`
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #4b2a99;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  cursor: pointer;
+`;
